@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>91次元浏览器-次元浏览入口_91次元浏览器站内导航与内容直达</title>
+<meta name="description" content="91次元浏览器主题首页，集中说明次元浏览器的入口定位、常用功能与站内导航，帮助访问者快速找到91次元浏览器的内容直达方式与使用路径。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1024'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%236ee7ff' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23b48cff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0b0c1a;
+  --bg2:#12142a;
+  --card:#171a33;
+  --line:#2a2e52;
+  --txt:#e9ebf7;
+  --sub:#a3a8c9;
+  --cyan:#6ee7ff;
+  --violet:#b48cff;
+  --pink:#ff8ac2;
+  --radius:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(900px 500px at 12% -8%, rgba(110,231,255,.16), transparent 60%),
+    radial-gradient(800px 520px at 92% 4%, rgba(180,140,255,.18), transparent 62%),
+    var(--bg);
+  color:var(--txt);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{max-width:100%}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+
+/* header */
+header.site{
+  position:sticky;top:0;z-index:40;
+  backdrop-filter:blur(14px);
+  background:rgba(11,12,26,.82);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;align-items:center;gap:20px;
+  padding:14px 0;flex-wrap:wrap;
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:.5px}
+.logo .mark{width:34px;height:34px;flex:0 0 34px}
+.logo span.brand{background:linear-gradient(90deg,var(--cyan),var(--violet) 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav.links{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+nav.links a{
+  font-size:14px;color:var(--sub);padding:8px 12px;border-radius:10px;
+  transition:.2s;border:1px solid transparent;
+}
+nav.links a:hover{color:var(--txt);background:rgba(110,231,255,.08);border-color:rgba(110,231,255,.24)}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 20px;border-radius:12px;font-size:14px;font-weight:600;
+  background:linear-gradient(100deg,var(--cyan),var(--violet));
+  color:#0b0c1a;border:none;cursor:pointer;transition:.2s;
+}
+.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--cyan);color:var(--cyan);transform:none}
+.btn[aria-disabled="true"]{opacity:.55;cursor:not-allowed;pointer-events:none}
+
+/* hero */
+.hero{padding:64px 0 40px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:1.4px;color:var(--cyan);
+  border:1px solid rgba(110,231,255,.32);border-radius:999px;
+  padding:5px 14px;margin-bottom:20px;text-transform:uppercase;
+}
+h1{
+  font-size:clamp(30px,4.4vw,50px);line-height:1.2;margin:0 0 18px;
+  font-weight:800;letter-spacing:.5px;
+  background:linear-gradient(96deg,#fff 8%,var(--cyan) 46%,var(--violet) 88%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lead{font-size:16px;color:var(--sub);margin:0 0 26px;max-width:520px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-visual{
+  position:relative;aspect-ratio:1/1;max-width:340px;justify-self:end;width:100%;
+}
+.hero-visual .ring{
+  position:absolute;inset:0;border-radius:50%;
+  border:1px dashed rgba(110,231,255,.3);
+  animation:spin 26s linear infinite;
+}
+.hero-visual .ring2{
+  position:absolute;inset:14%;border-radius:50%;
+  border:1px solid rgba(180,140,255,.26);
+  animation:spin 18s linear infinite reverse;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-visual .core{
+  position:absolute;inset:29%;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,rgba(110,231,255,.9),rgba(180,140,255,.55) 55%,rgba(11,12,26,0) 72%);
+  filter:blur(2px);
+}
+.hero-visual .tag{
+  position:absolute;font-size:12px;color:var(--sub);
+  border:1px solid var(--line);background:rgba(23,26,51,.86);
+  padding:4px 11px;border-radius:999px;white-space:nowrap;
+}
+.tag.t1{top:4%;left:50%;transform:translateX(-50%)}
+.tag.t2{top:44%;right:-4%}
+.tag.t3{bottom:6%;left:8%}
+
+/* section base */
+section{padding:52px 0}
+.sec-head{margin-bottom:28px;max-width:720px}
+.sec-head h2{font-size:clamp(21px,2.6vw,28px);margin:0 0 10px;font-weight:700}
+.sec-head h2 em{font-style:normal;color:var(--cyan)}
+.sec-head p{margin:0;color:var(--sub);font-size:15px}
+.kicker{font-size:12.5px;letter-spacing:2px;color:var(--violet);margin-bottom:8px;font-weight:600}
+
+/* cards */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{
+  background:linear-gradient(180deg,rgba(23,26,51,.96),rgba(18,20,42,.96));
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;transition:.22s;
+}
+.card:hover{border-color:rgba(110,231,255,.42);transform:translateY(-3px)}
+.card .ico{
+  width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+  background:rgba(110,231,255,.1);border:1px solid rgba(110,231,255,.24);margin-bottom:14px;
+}
+.card h3{margin:0 0 8px;font-size:16.5px;font-weight:700}
+.card p{margin:0;font-size:14px;color:var(--sub)}
+.card ul{margin:10px 0 0;padding-left:18px;font-size:14px;color:var(--sub)}
+.card ul li{margin-bottom:6px}
+
+/* steps */
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{
+  position:relative;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:24px 22px 22px;
+}
+.step::before{
+  counter-increment:s;content:counter(s,decimal-leading-zero);
+  font-size:13px;font-weight:700;color:var(--cyan);letter-spacing:1px;
+  display:block;margin-bottom:10px;
+}
+.step h3{margin:0 0 8px;font-size:16px}
+.step p{margin:0;font-size:14px;color:var(--sub)}
+
+/* feature strip */
+.strip{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;
+}
+.strip div{text-align:center}
+.strip strong{display:block;font-size:22px;color:var(--cyan);font-weight:800;letter-spacing:.5px}
+.strip span{font-size:13px;color:var(--sub)}
+
+/* faq */
+.faq details{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:16px 20px;margin-bottom:12px;
+}
+.faq details[open]{border-color:rgba(180,140,255,.42)}
+.faq summary{cursor:pointer;font-weight:600;font-size:15px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"＋";color:var(--violet);margin-right:10px;font-weight:700}
+.faq details[open] summary::before{content:"－"}
+.faq p{margin:12px 0 0;font-size:14px;color:var(--sub)}
+
+/* notice */
+.notice{
+  border:1px solid rgba(255,138,194,.32);
+  background:rgba(255,138,194,.06);
+  border-radius:14px;padding:18px 22px;font-size:14px;color:var(--sub);
+}
+.notice strong{color:var(--pink)}
+
+/* footer */
+footer.site{
+  border-top:1px solid var(--line);margin-top:30px;padding:38px 0 28px;
+  background:rgba(11,12,26,.7);
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;margin-bottom:26px}
+.foot-grid h4{margin:0 0 12px;font-size:14px;color:var(--txt)}
+.foot-grid p{margin:0;font-size:13.5px;color:var(--sub)}
+.foot-grid ul{list-style:none;margin:0;padding:0;font-size:13.5px;color:var(--sub)}
+.foot-grid li{margin-bottom:8px}
+.foot-grid a:hover{color:var(--cyan)}
+.copy{border-top:1px solid var(--line);padding-top:18px;font-size:12.5px;color:#767b9c;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .hero-visual{justify-self:center;max-width:280px;order:-1}
+  .grid-3,.steps,.strip{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .sec{padding:40px 0}
+}
+@media(max-width:600px){
+  .nav{padding:12px 0;gap:12px}
+  nav.links{order:3;width:100%;margin-left:0;justify-content:flex-start}
+  nav.links a{padding:6px 9px;font-size:13px}
+  .hero{padding:36px 0 20px}
+  .grid-3,.grid-2,.steps,.strip,.foot-grid{grid-template-columns:1fr}
+  .hero-visual{max-width:230px}
+  h1{font-size:28px}
+  .tag.t2{right:0}
+  section{padding:36px 0}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="91次元浏览器 首页">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#6ee7ff"/>
+            <stop offset="1" stop-color="#b48cff"/>
+          </linearGradient>
+        </defs>
+        <rect width="64" height="64" rx="15" fill="#12142a" stroke="#2a2e52"/>
+        <circle cx="32" cy="32" r="16" fill="none" stroke="url(#lg)" stroke-width="2.4"/>
+        <circle cx="32" cy="32" r="6" fill="url(#lg)"/>
+        <circle cx="32" cy="32" r="21" fill="none" stroke="#6ee7ff" stroke-width="1" stroke-dasharray="3 6" opacity=".55"/>
+      </svg>
+      <span class="brand">91次元浏览器</span>
+    </a>
+    <nav class="links" aria-label="主导航">
+      <a href="#position">入口定位</a>
+      <a href="#features">功能分区</a>
+      <a href="#start">使用路径</a>
+      <a href="#faq">常见疑问</a>
+      <a href="#download">下载说明</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">次元内容 · 浏览入口</span>
+        <h1>91次元浏览器</h1>
+        <p class="lead">91次元浏览器是一个围绕次元内容浏览需求组织起来的访问入口。本页把入口位置、常用功能与站内导航集中在一处，让访问者不必反复查找，就能顺着清晰的路径进入自己想看的内容。</p>
+        <div class="hero-actions">
+          <a class="btn" href="#start">查看使用路径</a>
+          <a class="btn ghost" href="#features">了解功能分区</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="ring"></div>
+        <div class="ring2"></div>
+        <div class="core"></div>
+        <span class="tag t1">内容直达</span>
+        <span class="tag t2">站内导航</span>
+        <span class="tag t3">次元分类</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="position">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">ENTRY POSITIONING</div>
+        <h2>91次元浏览器扮演什么角色</h2>
+        <p>把入口、导航与内容检索放在同一页面，减少访问者在多个地址之间来回切换的负担。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6ee7ff" stroke-width="1.8" stroke-linecap="round">
+              <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/>
+            </svg>
+          </div>
+          <h3>统一入口</h3>
+          <p>91次元浏览器把分散的访问需求收拢到一个页面，入口指向明确，访问者打开后即可按栏目找到对应区域，不必记多个地址。</p>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b48cff" stroke-width="1.8" stroke-linecap="round">
+              <rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>
+            </svg>
+          </div>
+          <h3>分区导航</h3>
+          <p>页面按用途划分区块，导航栏直接跳到对应位置。想看功能说明、使用路径还是常见疑问，都能一步到位。</p>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff8ac2" stroke-width="1.8" stroke-linecap="round">
+              <path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.4l6.1-.8z"/>
+            </svg>
+          </div>
+          <h3>内容直达</h3>
+          <p>核心操作以直达为主：访问者点击即进入目标位置，页面不设置多余跳转，保持浏览节奏连贯。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">FEATURE AREAS</div>
+        <h2>91次元浏览器的功能分区</h2>
+        <p>每个分区承担独立任务，从认识入口到实际使用，信息逐层展开，前后不重复。</p>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <h3>入口与地址区</h3>
+          <p>集中呈现91次元浏览器的访问入口说明，包括入口的用途、适用场景与打开方式。访问者在这里先确认“从哪里进”，再决定下一步去哪个分区。</p>
+          <ul>
+            <li>入口说明与适用场景</li>
+            <li>打开方式与访问顺序</li>
+            <li>地址变更时的查看位置</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>内容分类区</h3>
+          <p>按次元题材对内容做归类，方便按兴趣方向浏览。分类只做方向区分，不改变原始内容的属性，访问者可自行选择常看的方向。</p>
+          <ul>
+            <li>题材方向的粗略划分</li>
+            <li>分类之间的切换方式</li>
+            <li>常用分类的收藏思路</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>站内检索区</h3>
+          <p>在页面内提供关键词输入与结果筛选，帮助访问者缩小范围。检索只作用于当前站点收录的内容，结果按关键词匹配返回。</p>
+          <ul>
+            <li>关键词输入与清除</li>
+            <li>结果按匹配度排序</li>
+            <li>无结果时的替代建议</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>使用说明区</h3>
+          <p>把常见操作写成步骤，覆盖首次访问、分类浏览与检索筛选。说明文字以操作动作为主，避免只讲概念不讲做法。</p>
+          <ul>
+            <li>首次访问的准备步骤</li>
+            <li>分类浏览的操作顺序</li>
+            <li>检索无结果时的处理</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="start">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">HOW TO START</div>
+        <h2>从打开到找到内容的三步</h2>
+        <p>91次元浏览器的使用路径保持简短：确认入口、选择方向、缩小范围。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>确认入口</h3>
+          <p>先看页首的入口说明，确认当前访问地址与打开方式，避免在来源不明的地址上停留。入口信息以本页展示的内容为准。</p>
+        </div>
+        <div class="step">
+          <h3>选择分类方向</h3>
+          <p>进入内容分类区，按自己的兴趣方向选择一个题材分类，先看整体再决定是否深入。分类只做方向区分，不做内容排序承诺。</p>
+        </div>
+        <div class="step">
+          <h3>用检索缩小范围</h3>
+          <p>在检索区输入更具体的关键词，用结果列表确认是否符合预期。若结果为空，换用更短的关键词或回到分类区重新选择。</p>
+        </div>
+      </div>
+      <div class="strip" style="margin-top:22px">
+        <div><strong>3</strong><span>步完成首次访问</span></div>
+        <div><strong>4</strong><span>个功能分区</span></div>
+        <div><strong>1</strong><span>个统一入口</span></div>
+        <div><strong>0</strong><span>多余跳转</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">COMMON QUESTIONS</div>
+        <h2>访问者常问的几个问题</h2>
+        <p>问题围绕入口、分类与检索展开，答案对应页面中已经出现的分区，方便对照查看。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>91次元浏览器的入口在哪里确认？</summary>
+          <p>在本页“入口与地址区”查看入口说明。该区集中列出入口用途与打开方式，访问者对照页面内容即可确认，不需要额外查找。</p>
+        </details>
+        <details>
+          <summary>分类区的内容是怎么划分的？</summary>
+          <p>分类按次元题材方向做粗略区分，目的是让访问者先按兴趣缩小范围。分类不代表内容质量排序，也不改变原始内容的属性。</p>
+        </details>
+        <details>
+          <summary>检索没有结果怎么办？</summary>
+          <p>先缩短关键词，去掉过于具体的限定词再试；仍未匹配时，回到分类区手动选择方向。检索只作用于站点当前收录的内容。</p>
+        </details>
+        <details>
+          <summary>页面上的下载按钮现在能用吗？</summary>
+          <p>下载入口目前为占位状态，按钮保持禁用，暂不指向实际文件。后续替换为真实地址后会恢复正常使用，页面文字会同步更新。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="download">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">DOWNLOAD &amp; NOTES</div>
+        <h2>下载说明与使用提醒</h2>
+        <p>下载能力以实际提供的文件为准，本页不对版本号与更新时间做超出资料的承诺。</p>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <h3>下载入口</h3>
+          <p>91次元浏览器的下载按钮暂时保留为占位状态，点击不会触发文件传输。需要下载时请留意页面后续的地址更新，避免从非本页来源获取文件。</p>
+          <p style="margin-top:16px">
+            <a class="btn" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+          </p>
+        </article>
+        <div class="notice">
+          <p style="margin:0 0 10px"><strong>访问提醒</strong></p>
+          <p style="margin:0">打开任何入口前，先核对地址是否与页面展示一致；不要在来源不明的页面输入账号或个人信息。页面内容与功能以本页当前展示为准，后续如有调整会在此处更新说明。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>91次元浏览器</h4>
+        <p>面向次元内容浏览需求的访问入口页面，集中呈现入口定位、功能分区、使用路径与下载说明，帮助访问者按一条清晰的路径完成浏览。</p>
+      </div>
+      <div>
+        <h4>页面导航</h4>
+        <ul>
+          <li><a href="#position">入口定位</a></li>
+          <li><a href="#features">功能分区</a></li>
+          <li><a href="#start">使用路径</a></li>
+          <li><a href="#faq">常见疑问</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>相关入口</h4>
+        <ul>
+          <li><a href="#download">下载说明</a></li>
+          <li><a href="#top">回到顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>91次元浏览器 · 次元内容浏览入口页</span>
+      <span>页面内容以当前展示为准</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
