@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>r星每日大赛mdrs聚集地入口-每日大赛mdrs入口_聚集地导航</title>
+<meta name="description" content="r星每日大赛mdrs聚集地入口页面，汇总每日大赛mdrs入口地址、聚集地更新动态与访问方式，帮助你快速找到可用的r星每日大赛mdrs聚集地入口。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111827'/%3E%3Cpath d='M20 18h24v6H26v8h16v6H26v8h18v6H20z' fill='%23f5b301'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#111827;
+    --ink-soft:#374151;
+    --muted:#6b7280;
+    --line:#e5e7eb;
+    --bg:#f7f7f5;
+    --card:#ffffff;
+    --accent:#f5b301;
+    --accent-deep:#b98200;
+    --dark:#161b26;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,sans-serif;
+    font-size:16px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{width:min(1120px,92vw);margin:0 auto;}
+
+  /* header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(247,247,245,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:18px;padding:14px 0;
+  }
+  .logo{display:flex;align-items:center;gap:10px;min-width:0;}
+  .logo-mark{
+    width:38px;height:38px;flex:0 0 38px;border-radius:11px;
+    background:var(--dark);display:grid;place-items:center;
+  }
+  .logo-mark svg{width:22px;height:22px;}
+  .logo-text{
+    font-size:14px;font-weight:700;letter-spacing:.2px;line-height:1.35;
+    color:var(--ink);word-break:break-all;
+  }
+  .nav-links{display:flex;gap:4px;flex-wrap:wrap;align-items:center;}
+  .nav-links a{
+    font-size:14px;color:var(--ink-soft);padding:7px 12px;border-radius:999px;
+    transition:background .2s,color .2s;white-space:nowrap;
+  }
+  .nav-links a:hover{background:#efece4;color:var(--ink);}
+  .nav-cta{
+    background:var(--dark)!important;color:#fff!important;
+    font-weight:600;padding:8px 16px!important;
+  }
+  .nav-cta:hover{background:#000!important;}
+
+  /* hero */
+  .hero{padding:56px 0 44px;position:relative;overflow:hidden;}
+  .hero-grid{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;
+  }
+  .tagline{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:600;color:var(--accent-deep);
+    background:#fdf3d8;border:1px solid #f6e3ac;
+    padding:5px 12px;border-radius:999px;margin-bottom:18px;
+  }
+  .tagline .dot{width:7px;height:7px;border-radius:50%;background:#d99b00;}
+  h1{
+    font-size:clamp(26px,3.5vw,40px);
+    line-height:1.32;font-weight:800;letter-spacing:-.3px;
+    color:var(--ink);word-break:break-all;
+  }
+  h1 em{font-style:normal;background:linear-gradient(transparent 62%,#ffdd7a 62%);}
+  .hero-lead{
+    margin-top:18px;font-size:16.5px;color:var(--ink-soft);max-width:38em;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:15px;font-weight:600;padding:12px 22px;border-radius:12px;
+    transition:transform .15s,box-shadow .2s,background .2s;
+  }
+  .btn-primary{background:var(--dark);color:#fff;box-shadow:0 8px 20px rgba(22,27,38,.18);}
+  .btn-primary:hover{transform:translateY(-1px);background:#000;}
+  .btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line);}
+  .btn-ghost:hover{background:#f2efe8;}
+  .btn .arrow{transition:transform .2s;}
+  .btn:hover .arrow{transform:translateX(3px);}
+
+  .hero-card{
+    background:var(--dark);border-radius:22px;padding:26px;color:#e9e6df;
+    box-shadow:0 24px 50px -24px rgba(22,27,38,.5);
+    position:relative;overflow:hidden;
+  }
+  .hero-card::after{
+    content:"";position:absolute;right:-40px;top:-40px;width:150px;height:150px;
+    border:26px solid rgba(245,179,1,.16);border-radius:50%;
+  }
+  .hero-card h3{font-size:14px;font-weight:600;color:#a9a294;letter-spacing:.5px;margin-bottom:14px;}
+  .mini-list{list-style:none;display:grid;gap:10px;position:relative;z-index:1;}
+  .mini-list li{
+    display:flex;align-items:center;gap:10px;font-size:14.5px;
+    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+    padding:10px 14px;border-radius:11px;
+  }
+  .mini-list .idx{
+    width:22px;height:22px;flex:0 0 22px;border-radius:7px;background:var(--accent);
+    color:#221a00;font-size:12px;font-weight:800;display:grid;place-items:center;
+  }
+  .hero-note{font-size:12.5px;color:#8f897c;margin-top:16px;line-height:1.6;}
+
+  /* section base */
+  section{padding:52px 0;}
+  .sec-head{max-width:40em;margin-bottom:30px;}
+  .eyebrow{
+    font-size:13px;font-weight:700;letter-spacing:1.5px;color:var(--accent-deep);
+    text-transform:uppercase;margin-bottom:10px;
+  }
+  h2{font-size:clamp(21px,2.4vw,28px);font-weight:800;line-height:1.4;letter-spacing:-.2px;}
+  .sec-head p{margin-top:12px;color:var(--muted);font-size:15.5px;}
+
+  /* cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;transition:transform .2s,box-shadow .2s,border-color .2s;
+    display:flex;flex-direction:column;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 18px 34px -22px rgba(17,24,39,.35);border-color:#d9d4c7;}
+  .card-ico{
+    width:40px;height:40px;border-radius:11px;background:#fdf3d8;
+    display:grid;place-items:center;margin-bottom:16px;
+  }
+  .card-ico svg{width:21px;height:21px;}
+  .card h3{font-size:17px;font-weight:700;margin-bottom:8px;}
+  .card p{font-size:14.5px;color:var(--muted);line-height:1.75;}
+  .card .meta{
+    margin-top:auto;padding-top:16px;font-size:12.5px;color:#9ca3af;
+    display:flex;align-items:center;gap:6px;
+  }
+  .card .meta b{color:var(--accent-deep);font-weight:700;}
+
+  /* steps */
+  .steps-wrap{background:#fff;border:1px solid var(--line);border-radius:22px;padding:34px;}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:step;}
+  .step{position:relative;padding-top:14px;}
+  .step::before{
+    counter-increment:step;content:counter(step,decimal-leading-zero);
+    font-size:13px;font-weight:800;color:var(--accent-deep);letter-spacing:1px;
+    display:block;margin-bottom:10px;
+  }
+  .step h3{font-size:16px;font-weight:700;margin-bottom:8px;}
+  .step p{font-size:14px;color:var(--muted);line-height:1.7;}
+  .step:not(:last-child)::after{
+    content:"";position:absolute;right:-11px;top:34px;width:1px;height:calc(100% - 34px);
+    background:var(--line);
+  }
+
+  /* notice / FAQ */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;}
+  .notice{
+    background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);
+    border-radius:14px;padding:22px 24px;
+  }
+  .notice h3{font-size:16px;font-weight:700;margin-bottom:10px;}
+  .notice p{font-size:14.5px;color:var(--ink-soft);line-height:1.8;}
+  .notice p + p{margin-top:10px;}
+  details{
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:16px 20px;margin-bottom:12px;
+  }
+  details[open]{border-color:#e5dcc0;background:#fffdf6;}
+  summary{
+    font-size:15px;font-weight:600;cursor:pointer;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+";font-size:19px;color:var(--accent-deep);font-weight:400;line-height:1;}
+  details[open] summary::after{content:"–";}
+  details p{font-size:14.5px;color:var(--muted);margin-top:12px;line-height:1.8;}
+
+  /* download strip */
+  .dl-strip{
+    margin-top:34px;background:var(--dark);border-radius:20px;color:#e9e6df;
+    padding:30px 34px;display:flex;align-items:center;justify-content:space-between;
+    gap:24px;flex-wrap:wrap;
+  }
+  .dl-strip h3{font-size:18px;font-weight:700;color:#fff;margin-bottom:6px;}
+  .dl-strip p{font-size:14px;color:#a9a294;max-width:34em;}
+  .btn-disabled{
+    background:var(--accent);color:#221a00;font-weight:700;font-size:15px;
+    padding:12px 26px;border-radius:12px;pointer-events:none;
+    display:inline-flex;align-items:center;gap:8px;opacity:.95;
+  }
+
+  /* footer */
+  footer{background:#fff;border-top:1px solid var(--line);padding:40px 0 30px;margin-top:20px;}
+  .foot-top{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;padding-bottom:26px;border-bottom:1px solid var(--line);}
+  .foot-brand{max-width:32em;}
+  .foot-brand .logo-text{font-size:14.5px;margin-top:12px;}
+  .foot-brand p{font-size:13.5px;color:var(--muted);margin-top:10px;line-height:1.75;}
+  .foot-links{display:flex;gap:44px;flex-wrap:wrap;}
+  .foot-col h4{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:12px;letter-spacing:.5px;}
+  .foot-col a{display:block;font-size:13.5px;color:var(--muted);margin-bottom:9px;}
+  .foot-col a:hover{color:var(--accent-deep);}
+  .foot-bottom{padding-top:22px;font-size:12.5px;color:#9ca3af;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+
+  @media (max-width:920px){
+    .hero-grid{grid-template-columns:1fr;gap:32px;}
+    .cards{grid-template-columns:1fr 1fr;}
+    .steps{grid-template-columns:1fr 1fr;gap:26px;}
+    .step:not(:last-child)::after{display:none;}
+    .split{grid-template-columns:1fr;gap:26px;}
+  }
+  @media (max-width:640px){
+    body{font-size:15.5px;}
+    .nav{padding:11px 0;gap:10px;}
+    .nav-links{gap:0;}
+    .nav-links a{font-size:13px;padding:6px 9px;}
+    .nav-links a:not(.nav-cta){display:none;}
+    .logo-text{font-size:12.5px;}
+    .hero{padding:34px 0 30px;}
+    .hero-lead{font-size:15.5px;}
+    .hero-actions{gap:10px;}
+    .btn{padding:11px 18px;font-size:14.5px;width:100%;justify-content:center;}
+    section{padding:38px 0;}
+    .cards{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr;}
+    .steps-wrap{padding:24px;}
+    .dl-strip{padding:24px;flex-direction:column;align-items:flex-start;}
+    .btn-disabled{width:100%;justify-content:center;}
+    .foot-links{gap:30px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="返回顶部">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 4h12v3H9.5v3.2H17v3H9.5V16H18v3H6z" fill="#f5b301"/></svg>
+      </span>
+      <span class="logo-text">r星每日大赛mdrs聚集地入口</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#entry">入口说明</a>
+      <a href="#howto">访问步骤</a>
+      <a href="#update">更新动态</a>
+      <a href="#faq">常见问题</a>
+      <a class="nav-cta" href="#entry">前往聚集地</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="tagline"><span class="dot"></span>聚集地导航 · 每日更新</span>
+        <h1><em>r星每日大赛mdrs聚集地入口</em></h1>
+        <p class="hero-lead">
+          这里是围绕 r星每日大赛mdrs聚集地入口 的信息页，把每日大赛 mdrs 的入口线索、
+          聚集地动态和访问方式集中在一处。打开页面即可了解当前入口方向，再按步骤进入聚集地查看当日内容。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#entry">查看入口说明 <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="#howto">访问步骤</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="聚集地速览">
+        <h3>聚集地速览</h3>
+        <ul class="mini-list">
+          <li><span class="idx">1</span>每日大赛 mdrs 今日入口线索</li>
+          <li><span class="idx">2</span>聚集地访问方式与备用路径</li>
+          <li><span class="idx">3</span>入口失效时的自查顺序</li>
+          <li><span class="idx">4</span>页面更新记录与常见疑问</li>
+        </ul>
+        <p class="hero-note">速览内容为页面栏目索引，具体入口以聚集地当日的实际发布为准。</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ENTRY -->
+  <section id="entry">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Entry</div>
+        <h2>r星每日大赛mdrs聚集地入口 是什么</h2>
+        <p>先把名词关系说清楚，再决定从哪里进入，比反复搜索更省时间。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h10M4 17h7" stroke="#b98200" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>每日大赛的内容位</h3>
+          <p>“每日大赛”指按天更新的内容栏目，mdrs 是该栏目在聚集地中的标识。入口的作用是把你带到当天的内容位置，而不是保存历史页面。</p>
+          <div class="meta"><b>要点</b>· 按日更新，以当日为准</div>
+        </article>
+        <article class="card">
+          <div class="card-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7.5" stroke="#b98200" stroke-width="2"/><path d="M12 8v4.5l3 1.8" stroke="#b98200" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>聚集地承担的角色</h3>
+          <p>聚集地把分散的入口线索汇总到一起。r星每日大赛mdrs聚集地入口 因此是一个“找入口的地方”，访问者不必逐个记地址。</p>
+          <div class="meta"><b>要点</b>· 汇总线索，减少绕路</div>
+        </article>
+        <article class="card">
+          <div class="card-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 4v10m0 0 4-4m-4 4-4-4" stroke="#b98200" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 18h14" stroke="#b98200" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>入口不等于永久地址</h3>
+          <p>入口会随聚集地的调整而变化。发现打不开时，先回到本页核对最新提示，再按自查顺序排查，通常比换关键词搜索更有效。</p>
+          <div class="meta"><b>要点</b>· 先核对，再排查</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOWTO -->
+  <section id="howto" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Steps</div>
+        <h2>四步走通 r星每日大赛mdrs聚集地入口</h2>
+        <p>顺序固定，遇到异常时回到上一步即可，避免在多个页面之间来回跳转。</p>
+      </div>
+      <div class="steps-wrap">
+        <div class="steps">
+          <div class="step">
+            <h3>确认当日栏目</h3>
+            <p>先看聚集地是否已更新当天内容。每日大赛按日推进，未更新时入口可能暂时为空。</p>
+          </div>
+          <div class="step">
+            <h3>从本页进入</h3>
+            <p>使用本页给出的入口方向，不要同时打开多个来源，以免混淆版本与日期。</p>
+          </div>
+          <div class="step">
+            <h3>核对 mdrs 标识</h3>
+            <p>进入后确认页面中的 mdrs 标识与当日栏目一致，再继续浏览具体内容。</p>
+          </div>
+          <div class="step">
+            <h3>记录可用路径</h3>
+            <p>把当天可用的路径记下来，次日再访问时先比对，能更快判断入口是否变化。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPDATE + NOTICE -->
+  <section id="update" style="padding-top:0;">
+    <div class="wrap split">
+      <div>
+        <div class="sec-head" style="margin-bottom:20px;">
+          <div class="eyebrow">Updates</div>
+          <h2>更新动态与访问提示</h2>
+        </div>
+        <div class="notice">
+          <h3>入口状态怎么看</h3>
+          <p>聚集地会按日维护栏目。页面显示当日内容，说明入口处于可用状态；若显示为空或提示稍后再来，多为当日内容尚未发布。</p>
+          <p>r星每日大赛mdrs聚集地入口 的稳定性取决于聚集地本身，本页只做线索汇总，不对内容发布时间作额外承诺。</p>
+        </div>
+        <div class="notice" style="margin-top:16px;border-left-color:#9ca3af;">
+          <h3>找不到入口时的自查顺序</h3>
+          <p>一查日期是否已过零点；二查网络与浏览器是否正常；三查是否同时打开了旧版本页面；四再回本页确认提示是否已更新。</p>
+        </div>
+      </div>
+
+      <div id="faq">
+        <div class="sec-head" style="margin-bottom:20px;">
+          <div class="eyebrow">FAQ</div>
+          <h2>常见问题</h2>
+        </div>
+        <details open>
+          <summary>r星每日大赛mdrs聚集地入口每天都会变吗？</summary>
+          <p>不必然变化，但入口由聚集地维护，随栏目调整而更新。建议每次访问前先看本页提示，而不是长期收藏某一个旧地址。</p>
+        </details>
+        <details>
+          <summary>mdrs 指的是什么？</summary>
+          <p>mdrs 是每日大赛栏目在聚集地中的标识，用于区分不同栏目。判断是否进入正确位置，看这个标识最直接。</p>
+        </details>
+        <details>
+          <summary>为什么进入后内容是空的？</summary>
+          <p>常见原因是当日内容尚未发布，或访问的仍是前一日页面。等待更新或重新从本页进入，通常可以解决。</p>
+        </details>
+        <details>
+          <summary>手机上能正常使用吗？</summary>
+          <p>本页在手机与桌面端均可阅读，入口方向一致。手机端建议使用系统自带浏览器，并保持网络稳定。</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="dl-strip">
+        <div>
+          <h3>保存入口提示</h3>
+          <p>如需离线留存本页的入口说明与自查步骤，可下载后随时查看。下载文件将包含当前页面的文字内容。</p>
+        </div>
+        <a class="btn-disabled" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head" style="max-width:46em;">
+        <div class="eyebrow">Summary</div>
+        <h2>把入口这件事收敛成三步</h2>
+        <p>
+          访问 r星每日大赛mdrs聚集地入口 的核心动作其实只有三步：看当日提示、从本页进入、核对 mdrs 标识。
+          聚集地负责发布，本页负责把线索排好顺序。只要按顺序操作，就不需要在多个搜索结果之间反复比对。
+          后续若入口方向有调整，本页会同步更新说明，你可以直接从顶部导航回到对应栏目查看。
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="logo" href="#top">
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6 4h12v3H9.5v3.2H17v3H9.5V16H18v3H6z" fill="#f5b301"/></svg>
+          </span>
+        </a>
+        <div class="logo-text">r星每日大赛mdrs聚集地入口</div>
+        <p>围绕每日大赛 mdrs 的入口线索汇总页，提供访问步骤、状态自查与常见问题，内容以聚集地当日发布为准。</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>页面栏目</h4>
+          <a href="#entry">入口说明</a>
+          <a href="#howto">访问步骤</a>
+          <a href="#update">更新动态</a>
+          <a href="#faq">常见问题</a>
+        </div>
+        <div class="foot-col">
+          <h4>快速回到</h4>
+          <a href="#top">页面顶部</a>
+          <a href="#entry">聚集地入口</a>
+          <a href="#faq">疑问解答</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>r星每日大赛mdrs聚集地入口 · 入口线索汇总页</span>
+      <span>内容以聚集地当日实际发布为准</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
